@@ -31,12 +31,7 @@ class Playlist {
   }
 
   overallRating() {
-    let sumRating = 0
-
-    this.tracks.forEach((track) => {
-      sumRating += track.rating
-    })
-    return (sumRating / this.tracks.length)
+    return (this.tracks.reduce((a, b) => a += b.rating, 0) / this.tracks.length)
   }
 
   totalDuration() {
